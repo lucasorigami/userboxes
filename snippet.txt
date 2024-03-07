@@ -1,0 +1,154 @@
+  <page>
+    <title>User:Scepia/non-fiction</title>
+    <ns>2</ns>
+    <id>3833609</id>
+    <revision>
+      <id>1151065645</id>
+      <parentid>992940235</parentid>
+      <timestamp>2023-04-21T17:36:22Z</timestamp>
+      <contributor>
+        <username>Fayenatic london</username>
+        <id>1639942</id>
+      </contributor>
+      <comment>category deleted, see [[Wikipedia:Categories_for_discussion/Log/2023_April_12#Category:Wikipedians_interested_in_reading]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="794" xml:space="preserve">{{userbox
+| border-c = {{{1|#bbaa75}}}
+| id       = {{{3|[[Image:Open_book_01.svg|45px]]}}}
+| id-c     = {{{1|#000}}}
+| id-fc    = {{{id-fc|black}}}
+| id-s     = {{{5|{{{id-s|14}}}}}}
+| info     = This user enjoys reading '''[[non-fiction]]'''.
+| info-c   = {{{2|#eedda8}}}
+| usercategory  = 
+| nocat = {{{nocat|}}}
+}}&lt;noinclude&gt;
+&lt;br clear="all"/&gt;
+
+==Usage==
+
+To use this template, add it to your user page:
+ {{tlu|User:Scepia/non-fiction}}
+
+'''DO NOT''' copy the source of this userbox. Otherwise you risk putting your userpage in a miscategorization.
+
+==More UBX==
+
+Search for [[:Special:WhatLinksHere/User:Scepia/non-fiction|'''transclusions''']] and more UBX at [[:Wikipedia:Userboxes/Media/Books]]
+
+{{WP:UBS}}{{pp-template}}
+
+[[Category:Literature user templates|Non-fiction]]
+&lt;/noinclude&gt;</text>
+      <sha1>bn5n2q4rm4go37frafhs16drigl5oqp</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>User:W.carter/Userbox Classic literature</title>
+    <ns>2</ns>
+    <id>62225229</id>
+    <revision>
+      <id>1035387508</id>
+      <parentid>924200778</parentid>
+      <timestamp>2021-07-25T10:45:16Z</timestamp>
+      <contributor>
+        <username>WOSlinker</username>
+        <id>3138265</id>
+      </contributor>
+      <comment>fix nesting</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1374" xml:space="preserve">&lt;!-- The help text between the "arrows" is not visible on the page. You can remove all of that when your box is ready. --&gt;
+&lt;!-- Preferably, use only pictures, icons, gifs, etc. from [[c:Commons:Main page|Commons]] --&gt;
+&lt;!-- Some pictures on Wikipedia are [[WP:FUR|Non-free]] and can't be used on user pages. --&gt;
+&lt;!-- Codes for all the colors are on [[X11 color names]] and [[Web colors]] --&gt;
+
+{{userbox
+| border-c = #A27B62 &lt;!-- Border color around the userbox. --&gt;
+
+| id       = [[Image:Open_book_01.png|45px]] &lt;!-- Picture and picture size. Standard size is 45-50px, larger will make the box larger. --&gt;
+
+| id-c     = #F8F0DC &lt;!-- Background color behind the picture. --&gt;
+
+| info     = &lt;span style="color:#000000"&gt;This user enjoys&lt;/span&gt; '''[[Classic book|&lt;span style="color:#000080"&gt;classic&lt;/span&gt;]] [[literature|&lt;span style="color:#000080"&gt;literature&lt;/span&gt;]]''' &lt;!-- Text, text color, link and link color. Use ''' or '' to make the text Bold or Italic. --&gt;
+
+| info-c   = #F8F0DC &lt;!-- Background color of the space behind the text. --&gt;
+
+| info-s   = {{{info-s|8}}} &lt;!-- Font size. You can change the number. --&gt;
+
+| info-op  = text-align:center; &lt;!-- How the text is displayed, you can choose between "center", "right" or "left". --&gt;
+}}&lt;noinclude&gt;[[Category:Book fan user templates|Classic literature]]&lt;/noinclude&gt; &lt;!-- Change to the appropriate [[Category:Userboxes]] --&gt;</text>
+      <sha1>kyb656mslcgcm6k371kfg0p6e87orcu</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>User:Asmodea Oaktree/Userboxes/LightNovels</title>
+    <ns>2</ns>
+    <id>68792603</id>
+    <revision>
+      <id>1046475710</id>
+      <parentid>1045854671</parentid>
+      <timestamp>2021-09-25T21:42:19Z</timestamp>
+      <contributor>
+        <username>Asmodea Oaktree</username>
+        <id>38983701</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="274" xml:space="preserve">{{Userbox
+| border-c = #000000
+| id       = LN 
+| id-c     = #000000
+| id-fc    = #ADFF2F
+| id-s     = 14
+| info     = This user reads [[Light novel|&lt;span style="color:#000; font-weight:bold;"&gt;light novels&lt;/span&gt;]]
+| info-c   = #C0FF3F
+| info-fc  = #000000
+| info-s   = 8
+}}</text>
+      <sha1>dzmehjfejw1w0l19p66hmfoutfuoatv</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>User:88wolfmaster/Userboxes/SciFI</title>
+    <ns>2</ns>
+    <id>9969571</id>
+    <revision>
+      <id>974532947</id>
+      <parentid>974532474</parentid>
+      <timestamp>2020-08-23T15:40:03Z</timestamp>
+      <contributor>
+        <username>Voidxor</username>
+        <id>329764</id>
+      </contributor>
+      <minor/>
+      <comment>Fix color of link text. Simplify usage instructions.</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="911" xml:space="preserve">{{Userbox |border-c=#000033 |id-c=#000000 |id-s=12 |id-fc=#ffffff |info-c=#000000 |info-fc=#ffffff |id=SCI FI |info=This user loves '''[[Science fiction|&lt;span style="color: #ffffff"&gt;science fiction&lt;/span&gt;]]'''.
+| usercategory = &lt;includeonly&gt;Wikipedians who read hard science fiction&lt;/includeonly&gt;
+| nocat={{{nocat|}}}
+}}&lt;noinclude&gt;
+{{Clear}}
+
+==Usage==
+To use this template, add it to your user page:
+ {{tlu|User:88wolfmaster/Userboxes/SciFI}}
+
+This will add you to {{cl|Wikipedians who read science fiction}}.
+
+'''DO NOT''' copy the source of this userbox. Otherwise you risk putting your userpage in a miscategorization.
+
+==More UBX==
+Search for [[:Special:WhatLinksHere/User:88wolfmaster/Userboxes/SciFI|'''transclusions''']] and more UBX at [[:Wikipedia:Userboxes/Media/Books]]
+
+{{WP:UBS}}
+
+{{DEFAULTSORT:Sci-fi}}
+[[Category:Fiction genre user templates]]
+[[Category:Literature user templates]]
+&lt;/noinclude&gt;</text>
+      <sha1>1zjy1dzqfx8pppjpyem2c8niohsmjmy</sha1>
+    </revision>
+  </page>
