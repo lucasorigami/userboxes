@@ -1,25 +1,24 @@
 import mwparserfromhell
 from bs4 import BeautifulSoup
-
-# if you only run the short snippet, there's nothing wrong with it. 
-# file = open("snippet.txt", "r")
+import json
 
 
-# If you run the code through the full text you'll get useless information after "This User likes Classic Literature"
-# file = open("WP-Userboxes-Text.xml", "r")
-
-
-
-# template_text = file.read()
-
-
+inputfilepath = "WP-Userboxes-Text.xml"
+# inputfilepath = "snippet.txt"
 
 info_values = []
-page_titles = []
+
 
 i = 0
 j = 0
 
+
+
+def append_to_list(titles, info):
+    # Create a new structure
+
+    new_item = {"title": titles, "info": info}
+    info_values.append(new_item)
 
 def extract_info_from_userbox(template_text):
     # Parse the template text using mwparserfromhell
@@ -45,11 +44,8 @@ def extract_info_from_userbox(template_text):
                     print("cleaning WikiText from info...")
                     wikicode = mwparserfromhell.parse(plain_text)
                     stripped_text = wikicode.strip_code()
-                    info_values.append(stripped_text)
-                    print(len(info_values))
-
     # Return None if no Userbox template or "info" parameter is found
-    return info_values
+                    return stripped_text
 
 
 
@@ -58,29 +54,29 @@ def extract_info_from_userbox(template_text):
 
 
 
-with open('WP-Userboxes-Text.xml', 'r') as file:
+
+with open(inputfilepath, 'r') as file:
       soup = BeautifulSoup(file, 'html.parser')
       for page_element in soup.find_all('page'):
         template_text = page_element.get_text()
-        extract_info_from_userbox(template_text)
         for title_element in page_element.find_all('title'):
           title = title_element.get_text()
-          page_titles.append(title_element)
-
+          titles = title
+        
 
         j = j+1
         print("page no:", j)
+        info = extract_info_from_userbox(template_text)
+        append_to_list(titles, info)
 
-# Get Array, and put every item on new line. 
-# info_value = extract_info_from_userbox(template_text)
-# info_value = "\n".join(info_value)
-with open("output.txt", "w") as outputfile:
-  for item in info_values:
-    outputfile.write(str(item) + '\n')
+
+json_data = json.dumps(info_values)
+
+with open("output.json", "w") as outputfile:
+  # for item in info_values:
+     outputfile.write(str(json_data) + '\n')
 print("done")
-print(info_values)
-
-
+# print(info_values)
 
 # print()
 # len(info_value)
