@@ -1,0 +1,14 @@
+{
+  "name": "@d3/force-directed-tree",
+  "main": "15c9432c35796ec0@199.js",
+  "version": "199.0.0",
+  "homepage": "https://observablehq.com/@d3/force-directed-tree",
+  "author": {
+    "name": "D3",
+    "url": "https://observablehq.com/@d3"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

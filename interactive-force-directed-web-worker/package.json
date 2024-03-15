@@ -1,0 +1,14 @@
+{
+  "name": "@mootari/interactive-force-directed-web-worker",
+  "main": "2c03f78c76d57e73@1448.js",
+  "version": "1448.0.0",
+  "homepage": "https://observablehq.com/@mootari/interactive-force-directed-web-worker",
+  "author": {
+    "name": "Fabian Iwand",
+    "url": "https://observablehq.com/@mootari"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

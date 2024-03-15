@@ -1,0 +1,12 @@
+(?x)
+# Match '{{yy|' 
+\{\{
+yy\|
+#(?:[^|:}]+\|)
+(?!User\ WP:)
+
+# Then "forget" that text and just keep stuff with ':' in it:
+#\K
+([^|}:]+:[^|}]+)
+
+

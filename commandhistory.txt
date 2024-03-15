@@ -1,0 +1,31 @@
+: 1707758303:0;ggrep
+: 1707758307:0;ggrep -Po '{{yy.*(?<!\|)\|(User:.*|Template:.*|Wikipedia:.*)(\||}})'\
+: 1707758313:0;ggrep -Po '{{yy.*(?<!\|)\|(User:.*|Template:.*|Wikipedia:.*)(\||}})' WP-Userboxes-Pages.xml\
+: 1707758788:0;ggrep -Po '{{yy.*(?<!\|{2,})\|(User:.*|Template:.*|Wikipedia:.*)(\||}})' WP-Userboxes-Pages.xml\
+: 1707758802:0;ggrep -Po '{{yy.*(?<!\|{2,})(User:.*|Template:.*|Wikipedia:.*)(\||}})' WP-Userboxes-Pages.xml\
+: 1707758805:0;ggrep -Po '{{yy.*(?<!\|)\|(User:.*|Template:.*|Wikipedia:.*)(\||}})' WP-Userboxes-Pages.xml\
+: 1707758848:0;echo "ggrep -Po '{{yy.*(?<.*|Template:.*|Wikipedia:.*)(\||}})' WP-Userboxes-Pages.xml" | pbcopy
+: 1707759086:0;ggrep -Po '{{yy.*(?<!\|)(\|User:.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml\
+: 1707759919:0;ggrep -Po '{{yy(?<!\|)(\|User:.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml\
+: 1707760043:0;echo "ggrep -Po '{{yy.*(?<.*|Template:.*|Wikipedia:.*)(\||}})' WP-Userboxes-Pages.xml" | pbcopy
+: 1707760048:0;ggrep -Po '{{yy(?<!\|)(\|User:.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml\
+: 1707760134:0;ggrep -Po '{{yy.*(?<!\|)(\|User:.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml\
+: 1707760170:0;ggrep -Po '{{yy(?<!\|)(\|User:.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml\
+: 1707760342:0;ggrep -Po '{{yy(?<!\|)(\|User:.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less\
+: 1707829605:0;echo "ggrep -Po '{{yy(?<.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less" > temp.sh\
+: 1708621605:0;ggrep -Po '{{yy(?<!\|)(\|User:.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less\
+: 1708621637:0;echo "ggrep -Po '{{yy(?<.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less" > temp.sh\
+: 1708621729:0;ggrep -Po '{{yy(?<.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less\
+: 1708621739:0;ggrep -Po '{{yy(?<!\|)(\|User:.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less\
+: 1708621762:0;echo "ggrep -Po '{{yy(?<.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less" > temp.sh
+: 1708621776:0;echo "ggrep -Po '{{yy(?<.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less" > temp.sh
+: 1708621826:0;ggrep -Po '{{yy(?<!\|)(\|User:.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less:q\
+: 1708621844:0;ggrep -Po '{{yy(?<.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less\
+: 1708621878:0;echo "ggrep -Po '{{yy.*(?<.*|Template:.*|Wikipedia:.*)(\||}})' WP-Userboxes-Pages.xml" | pbcopy
+: 1708621882:0;ggrep -Po '{{yy.*(?<.*|Template:.*|Wikipedia:.*)(\||}})' WP-Userboxes-Pages.xml\
+: 1708621914:0;ggrep -Po '{{yy(?<.*|\|Template:.*|\|Wikipedia:.*)' WP-Userboxes-Pages.xml | less\
+: 1708621951:0;vim ~/.zsh_history | grep "ggrep"
+: 1708621960:0;vim ~/.zsh_history | find "ggrep"
+: 1708621978:0;cat ~/.zsh_history | grep "ggrep"
+: 1708622042:0;cat ~/.zsh_history | grep "ggrep"
+: 1708622051:0;cat ~/.zsh_history | grep "ggrep" > commandhistory.txt

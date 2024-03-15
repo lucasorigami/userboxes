@@ -1,24 +1,69 @@
 import mwparserfromhell
 from bs4 import BeautifulSoup
 import json
+import requests
+
+
+
+S = requests.Session()
+URL = "https://en.wikipedia.org/w/api.php"
 
 
 inputfilepath = "WP-Userboxes-Text.xml"
 # inputfilepath = "snippet.txt"
 
 info_values = []
-
+transcluded = []
 
 i = 0
 j = 0
 
 
 
-def append_to_list(titles, info):
+def append_to_list(titles, info, transcluded):
     # Create a new structure
+    info_values.append({"title": titles, "info": info, "transcluded": transcluded.copy()})
+    transcluded.clear()
 
-    new_item = {"title": titles, "info": info}
-    info_values.append(new_item)
+# ==== GET TRANSCLUDE ====
+
+
+
+          
+def get_transcluded_pages(titles):
+  last_continue = {}
+  searchtransclude = titles
+  PARAMS = {
+    "action": "query",
+    "titles" : searchtransclude,
+    "prop": "transcludedin",
+    "format": "json",
+    "tinamespace": "2",
+    "tilimit": "50",
+    "API_KEY": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzYzYwOTk1MDcxMWQ5MjgyNTRlMmEzNTYwYjEyZDRhNSIsImp0aSI6IjVjYmY4ZTY3OWE0NDg5MGEwMDAyMjZjYzEzZDZlOTQ3YTYwZDk1OWY1MGViMzEwZTJhYjc4MGM1ZjIwNTc0OGE5NWMwZjk4NWU0N2Y2NmE4IiwiaWF0IjoxNzA5ODk3NzAyLjA3NDgxLCJuYmYiOjE3MDk4OTc3MDIuMDc0ODEzLCJleHAiOjMzMjY2ODA2NTAyLjA3MzYyNCwic3ViIjoiNTA2MzgwNTMiLCJpc3MiOiJodHRwczovL21ldGEud2lraW1lZGlhLm9yZyIsInJhdGVsaW1pdCI6eyJyZXF1ZXN0c19wZXJfdW5pdCI6NTAwMCwidW5pdCI6IkhPVVIifSwic2NvcGVzIjpbImJhc2ljIl19.FHMEb81K-A5shKE5YZZQ75LocL-WlVSdyDY2TqDoygFclTGGR1MiOK_BQNYK2IIoJLj5Zwdj-wqwP_YlvadroqJhG3PlPw2BNKMnaAO1XT9BNv6WJiDbpt2hcoFclNcTuXKh_CfkmhQAtSQYBue-7trO7KP4LrmrdKQq1zE77jPNXxX5qgzAIM4N6V0weGP7FKuyjRgxneUtILpQIzndEbFRWmV7RbsaKrorRQ5XLeqpD-4xbNXE_V2WRSIgKLMzdmtkA21ZCJJpgh3r6_CswnsWuEBl8YyPfyJCJtC72vK8qqG7brQrIhp7w0eyec2s2BR8kKuDRsA9kV7rjukgBbrQZXtnOGmPzfHejArYXLriXEh-5M5PnHk8YIkgjeJpr0nMBdRxmaJn9_UlFIF9A_AYpcFZvY68EDRDYFusaaLUuvgO1W02TthSPTy7CGQwwDDtNQp7LsaIb2ZTKs_rgDj_5EsSDFIo1cd7i_t0UH-fPAmDm8qY9dYVHLwHG2K67_6zPinCWDtjsuXctG4ApXc4riciTf0yMZckeQbbf_tMEy0sFQx978qiHXpEYNyCrfVrG6NrFPCHhv5BFzdR85Dkuj_awgDkf-jCc45B4NkLJbc2QryvH3m7rBlsf3tzNFuSESJ8p8KEqDcNohK1HHRC4C1z_KfSxDHgjhh0Z6E"
+  }
+
+  while True:
+    req_params = PARAMS.copy()
+    req_params.update(last_continue)  # Update parameters with 'continue' values
+    R = S.get(url=URL, params=req_params)
+    DATA = R.json()
+
+    UP_titles = [item['title'] for page in DATA['query']['pages'].values() for item in page.get('transcludedin', [])]
+
+    # with open('output_titles.txt', 'a') as output_file:  # Append mode to avoid overwriting
+    #     for title in UP_titles:
+    #         output_file.write(title + '\n')
+
+    for title in UP_titles:
+      transcluded.append(title)
+    if 'continue' not in DATA:
+        break
+
+    last_continue = DATA['continue']  # Update 'continue' parameter for next iteration
+
+
+
 
 def extract_info_from_userbox(template_text):
     # Parse the template text using mwparserfromhell
@@ -27,9 +72,8 @@ def extract_info_from_userbox(template_text):
     # Iterate through templates in the wikicode
     for template in wikicode.filter_templates():
         # Check if the template is a Userbox template
-        if template.name.matches("Userbox"):
+        if template.name.matches("Userbox") or template.name.matches("userbox") or template.name.matches("Userbox-2") or template.name.matches("userbox-2"):
             # Check if the template has an "info" parameter
-            # print(template.params)
             for param in template.params:
                 if param.name.matches("info"):
                     print("getting info parameter...")
@@ -63,11 +107,21 @@ with open(inputfilepath, 'r') as file:
           title = title_element.get_text()
           titles = title
         
-
         j = j+1
         print("page no:", j)
         info = extract_info_from_userbox(template_text)
-        append_to_list(titles, info)
+        # check if info isn't empty
+        if info:
+          get_transcluded_pages(titles)
+          append_to_list(titles, info, transcluded)
+        # transcluded.clear()  
+
+
+
+
+
+
+# ==== EXPORT ====
 
 
 json_data = json.dumps(info_values)
